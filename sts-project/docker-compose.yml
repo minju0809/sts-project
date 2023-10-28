@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mariadb:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sts-projectDB
+      MYSQL_USER: kang
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    networks:
+      - mariadb_network
+
+networks:
+  mariadb_network:
